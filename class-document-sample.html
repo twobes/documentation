@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Class Sample</title>
+
+    <script type="application/ld+json" data-name="class-info">
+        {
+            "name": "InsellerateClient",
+            "namespace": "BeSmartee\\InsellerateSdk",
+            "desc": "Insellerate instance.",
+            "constants": [
+                {
+                    "name": "BASE_URI",
+                    "value": "https://app.insellerate.com",
+                    "type": "string",
+                    "desc": "Default base uri of Insellerate vendor."
+                },
+                {
+                    "name": "FORMAT",
+                    "value": "application/json",
+                    "type": "string",
+                    "desc": "The format of API request and response."
+                }
+            ],
+            "properties": [
+                {
+                    "name": "baseUri",
+                    "type": "string",
+                    "modification": "protected",
+                    "is_static": false,
+                    "default_value": 12313,
+                    "desc": "The base uri of Insellerate instance.",
+                    "is_magic": false
+                },
+                {
+                    "name": "authentication",
+                    "type": "BeSmartee\\InsellerateSdk\\Auth\\Authentication",
+                    "modification": "protected",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "Authentication method for Insellerate instance.",
+                    "is_magic": false
+                },
+                {
+                    "name": "httpHandler",
+                    "type": "BeSmartee\\InsellerateSdk\\Http\\HttpHandler",
+                    "modification": "protected",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "The HTTP handler of Insellerate instance. Handler is used to request to and get response from API.",
+                    "is_magic": false
+                },
+                {
+                    "name": "logger",
+                    "type": "BeSmartee\\InsellerateSdk\\Log\\Logger",
+                    "modification": "protected",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "The logger of Insellerate instance.",
+                    "is_magic": false
+                },
+                {
+                    "name": "credentials",
+                    "type": "BeSmartee\\InsellerateSdk\\InsellerateCredentials|NULL",
+                    "modification": "protected",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "The credentials of Insellerate instance.",
+                    "is_magic": false
+                },
+                {
+                    "name": "integrations",
+                    "type": "array",
+                    "modification": "protected",
+                    "is_static": false,
+                    "default_value": {
+                        "integrationExternalContact": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationExternalContact",
+                        "integrationSystemLookup": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationSystemLookup",
+                        "iql": "BeSmartee\\InsellerateSdk\\Integration\\IQL",
+                        "integrationApplication": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationApplication",
+                        "integrationCampaign": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationCampaign",
+                        "integrationOrgLookup": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationOrgLookup",
+                        "integrationProspectData": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationProspectData"
+                    },
+                    "desc": "Integration we have integrated with.",
+                    "is_magic": false
+                },
+                {
+                    "name": "integrationExternalContact",
+                    "type": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationExternalContact",
+                    "modification": "public",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "All API call in category Integration External Contact. See more at <a target='_blank' href='https://app.insellerate.com/Help'>https://app.insellerate.com/Help.</a>",
+                    "is_magic": true
+                },
+                {
+                    "name": "iql",
+                    "type": "BeSmartee\\InsellerateSdk\\Integration\\IQL",
+                    "modification": "public",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "All API call in category Integration IQL.",
+                    "is_magic": true
+                },
+                {
+                    "name": "integrationApplication",
+                    "type": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationApplication",
+                    "modification": "public",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "All API call in category Integration Application. See more at <a target='_blank' href='https://app.insellerate.com/Help'>https://app.insellerate.com/Help.</a>",
+                    "is_magic": true
+                },
+                {
+                    "name": "integrationCampaign",
+                    "type": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationCampaign",
+                    "modification": "public",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "All API call in category Integration Campaign. See more at <a target='_blank' href='https://app.insellerate.com/Help'>https://app.insellerate.com/Help.</a>",
+                    "is_magic": true
+                },
+                {
+                    "name": "integrationOrgLookup",
+                    "type": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationOrgLookup",
+                    "modification": "public",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "All API call in category Integration Org Lookup. See more at <a target='_blank' href='https://app.insellerate.com/Help'>https://app.insellerate.com/Help.</a>",
+                    "is_magic": true
+                },
+                {
+                    "name": "integrationProspectData",
+                    "type": "BeSmartee\\InsellerateSdk\\Integration\\IntegrationProspectData",
+                    "modification": "public",
+                    "is_static": false,
+                    "default_value": null,
+                    "desc": "All API call in category Integration Prospect Data. See more at <a target='_blank' href='https://app.insellerate.com/Help'>https://app.insellerate.com/Help.</a>",
+                    "is_magic": true
+                }
+            ],
+            "constructor": {
+                "desc": "New Insellerate instance.",
+                "code": "public function __construct($baseUri = null, $credentials = null, $logger = null)",
+                "params": [
+                    {
+                        "name": "baseUri",
+                        "has_default_value": true,
+                        "default_value": "NULL",
+                        "type": "string|null",
+                        "desc": "The base uri of instance."
+                    },
+                    {
+                        "name": "credentials",
+                        "has_default_value": true,
+                        "default_value": "NULL",
+                        "type": "BeSmartee\\InsellerateSdk\\InsellerateCredentials|NULL",
+                        "desc": "The credentials of instance."
+                    },
+                    {
+                        "name": "logger",
+                        "has_default_value": true,
+                        "default_value": "NULL",
+                        "type": "BeSmartee\\InsellerateSdk\\Log\\Logger|NULL",
+                        "desc": "Logger instance."
+                    }
+                ],
+                "exceptions": [
+                    {
+                        "type": "\\Exception",
+                        "desc": "dasdasdasdasdasd"
+                    }
+                ]
+            },
+            "methods": [
+                {
+                    "name": "__get",
+                    "desc": "Magic method getter",
+                    "code": "public function __get($name): mixed",
+                    "params": [
+                        {
+                            "name": "name",
+                            "has_default_value": false,
+                            "default_value": null,
+                            "type": "string",
+                            "desc": "The name of magic property."
+                        }
+                    ],
+                    "modification": "public",
+                    "return": "mixed",
+                    "exceptions": []
+                },
+                {
+                    "name": "fixUri",
+                    "desc": "Check uri and add base uri if the uri given doesn't contain domain.",
+                    "code": "protected function fixUri($uri): string",
+                    "params": [
+                        {
+                            "name": "uri",
+                            "has_default_value": false,
+                            "default_value": null,
+                            "type": "string",
+                            "desc": "The uri to be fixed."
+                        }
+                    ],
+                    "modification": "protected",
+                    "return": "string",
+                    "exceptions": []
+                },
+                {
+                    "name": "send",
+                    "desc": "Send request to Insellerate and get back response.",
+                    "code": "public function send($request): BeSmartee\\InsellerateSdk\\Http\\Response",
+                    "params": [
+                        {
+                            "name": "request",
+                            "has_default_value": false,
+                            "default_value": null,
+                            "type": "BeSmartee\\InsellerateSdk\\Http\\Request",
+                            "desc": "Your request."
+                        }
+                    ],
+                    "modification": "public",
+                    "return": "BeSmartee\\InsellerateSdk\\Http\\Response",
+                    "exceptions": []
+                }
+            ]
+        }
+    </script>
+</head>
+<body>
+<div id="doc-container" class=""></div>
+<div class="section c-mb-32 usage-example-section d-none" id="usage-example-section"><h4 class="section-title" id="usage-example">5. Usages</h4>
+    <div class="section-container">
+        <div class="c-mb-32">
+            <p>Creating new InsellerateClient instance.</p>
+            <pre class="line-numbers">
+            <code class="language-php">
+                &lt;?php
+                use BeSmartee\InsellerateSdk;
+
+                // Client has been whitelisted IP
+                $clientIPWhiteListed = new InsellerateClient('https://stg.insellerate.com');
+
+                // Client with username and password
+                $credentials = InsellerateCredentials::create(array(
+                    'username' => "user@company.com",
+                    'password' => "ImStr0nGp@ass";
+                ));
+                $client = new InsellerateClient('https://stg.insellerate.com', $credentials);
+            </code>
+            </pre>
+        </div>
+        <div class="c-mb-32">
+            <p>Create new application on Insellerate.</p>
+            <pre class="line-numbers">
+            <code class="language-php">
+                &lt;?php
+                use BeSmartee\InsellerateSdk;
+
+                $client = new InsellerateClient('https://stg.insellerate.com');
+                $orgId = 112345; // TODO: Replace with your org id
+                $campaignId = 1101; // TODO: Replace with your campaign id
+                //
+                /**
+                 * Refer to:
+                 * @link: https://app.insellerate.com/Help/Api/POST-api-integration-CampaignPost-orgId-campaignId
+                 */
+                $postData = [
+                    'root' => [
+                        'row' => [
+                            [
+                                'Ref_ID'        => 'PUBLICID',
+                                'First_Name'    => 'Alice',
+                                'Last_Name'     => 'Firstimer',
+                                'Middle_Name'   => '',
+                                'Email'         => 'alice@besmartee.com',
+                                'SSN'           => '991919991',
+                                'Phone'         => '8888888888',
+                                'DateOfBirth'   => '10/01/1993',
+                            ]
+                        ]
+                    ]
+                ];
+                $result = $client->integrationCampaign->campaignPost($orgId, $campaignId, $postData);
+
+                if ($result !== false && $result['StatusCode'] == 1) {
+                    // Successful
+                    $prospectId = $result['Data']['ProspectId'];
+                    $applicationId = $result['Data']['ApplicationId'];
+                    // do something with $prospectId & $applicationId
+                }
+                else {
+                    // Handle error
+                }
+            </code>
+            </pre>
+        </div>
+
+        <div class="c-mb-32">
+            <p>Get application fields of client.</p>
+            <pre class="line-numbers">
+            <code class="language-php">
+                &lt;?php
+                use BeSmartee\InsellerateSdk;
+
+                $client = new InsellerateClient('https://stg.insellerate.com');
+
+                $orgId = 112345; // TODO: Replace with your org id
+                // @link: https://app.insellerate.com/Help/Api/GET-api-integration-GetApplicationFields_orgId
+                $result = $client->integrationSystemLookup->getApplicationFields($orgId);
+
+                if ($result !== false && $result['StatusCode'] == 1) {
+                    // Successful
+                    $fields = $result['Data'];
+                    var_dump($fields);
+                }
+                else {
+                    echo 'Error occurs';
+                }
+            </code>
+            </pre>
+        </div>
+
+        <div class="c-mb-32">
+            <p>Search application by IQL</p>
+            <pre class="line-numbers">
+            <code class="language-php">
+                &lt;?php
+                use BeSmartee\InsellerateSdk;
+
+                $client = new InsellerateClient('https://stg.insellerate.com');
+
+                $orgId = 112345; // TODO: Replace with your org id
+                $query = 'query=[2]="REF123" OR [189]="53" OR [75]="costler456@aol.com"';
+                $select = 'select=[72],[73],[138],[139],[140]';
+                $result = $client->iql->search($orgId, $query, $select);
+
+                var_dump($result);
+            </code>
+            </pre>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script src="./assets/plugins/jquery-3.4.1.slim.min.js"></script>-->
+<script src="./assets/plugins/jquery-3.4.1.min.js"></script>
+<script src="./assets/plugins/popper.min.js"></script>
+<script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/plugins/prism/prism.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/class-documentation.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var doc = new ClassDocumentationGenerator('#doc-container', JSON.parse($('script[data-name="class-info"]').text()));
+        doc.addNavItem(' Usage Example', 'usage-example');
+
+        setTimeout(function () {
+            $('#usage-example-section').appendTo('#doc-container .content');
+            $('#usage-example-section').removeClass('d-none');
+        }, 250);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    font-size: .9rem;
+}
+
+ul.property-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.c-mb-8 {
+    margin-bottom: 8px;
+}
+
+.c-mb-16 {
+    margin-bottom: 16px;
+}
+
+.c-mb-32 {
+    margin-bottom: 32px;
+}
+
+.c-mt-16 {
+    margin-top: 16px;
+}
+
+.type-tag {
+    display: inline-block;
+    padding: 0 6px;
+    background: #ecf0f1;
+    border-radius: 4px;
+    font-size: .8rem;
+}
+
+nav.doc-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    padding: 16px 8px;
+    height: 100vh;
+    overflow-y: scroll;
+    background: #183661;
+}
+
+nav.doc-nav > div.doc-item {
+    margin-bottom: 16px;
+}
+
+nav.doc-nav > div.doc-item > a.doc-item-link {
+    color: #ecf0f1;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#doc-container .content {
+    position: relative;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+#doc-container .content .class-info {
+    position: fixed;
+    top: 0;
+    background: #f5f5f5;
+    width: calc(100% - 300px);
+    right: 0;
+    z-index: 9999;
+}
+
+ul.property-list > li,
+.method-list > .method-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 6px;
+}
+
+ul.property-list > li:first-child,
+.method-list > .method-item:first-child {
+    border-top: 1px solid #dee2e6;
+}
+
+ul.property-list > li:nth-child(odd),
+.method-list > .method-item:nth-child(odd) {
+    background: #f5f5f5;
+}
